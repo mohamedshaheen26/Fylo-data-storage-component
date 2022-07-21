@@ -85,7 +85,7 @@ main .container .desc .popup {
   align-items: center;
   border-radius: 10px;
 }
-main .description-progress .popup span {
+main .description-progress .popup h1 {
   color: var(--body-bk);
   font-size: 40px;
   margin-right: 10px;
