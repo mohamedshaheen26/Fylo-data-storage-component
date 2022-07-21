@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+:root {
+  --body-bk: hsl(229, 57%, 11%);
+  --storage-bk: hsl(228, 56%, 26%);
+  --main-color: hsl(243, 100%, 93%);
+  --paragraph-color: hsl(229, 7%, 55%);
+  --progress-bk: hsl(6, 100%, 80%), hsl(335, 100%, 65%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--body-bk);
+  background-image: url(../images/bg-desktop.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .container {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+main .container .fylo-storage {
+  width: 43%;
+  background: var(--storage-bk);
+  padding: 40px;
+  border-radius: 10px 100px 10px 10px;
+}
+
+main .container .icons {
+  width: 55%;
+  margin: 30px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .container .icons div {
+  background: var(--body-bk);
+  color: var(--main-color);
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .container .description-progress {
+  width: 53%;
+  background: var(--storage-bk);
+  padding: 40px;
+  border-radius: 10px;
+  color: var(--paragraph-color);
+  position: relative;
+}
+main .container .description-progress .desc {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+main .container .desc .popup {
+  font-weight: 700;
+  width: 180px;
+  height: 70px;
+  background: white;
+  position: absolute;
+  right: 0;
+  top: -80px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+main .description-progress .popup span {
+  color: var(--body-bk);
+  font-size: 40px;
+  margin-right: 10px;
+}
+main .container .desc .popup::before {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  right: 0;
+  border-width: 20px;
+  border-style: solid;
+  border-color: transparent white transparent transparent;
+}
+main .description-progress p {
+  font-size: 14px;
+}
+main .desc p span {
+  color: var(--main-color);
+}
+main .description-progress .progress {
+  width: 100%;
+  height: 20px;
+  background: var(--body-bk);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+main .progress .progress-bar {
+  margin-left: 3px;
+  position: relative;
+  border-radius: 15px;
+  width: 75%;
+  height: 70%;
+  background-image: linear-gradient(to right, var(--progress-bk));
+}
+main .progress .progress-bar::before {
+  content: "";
+  position: absolute;
+  right: 2px;
+  bottom: 2px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--main-color);
+}
+main .description-progress .giga {
+  font-size: 14px;
+  color: var(--main-color);
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 375px) {
+  main {
+    background-image: url(../images/bg-mobile.png);
+    background-size: cover;
+  }
+  main .container {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+  main .container .fylo-storage,
+  main .container .description-progress {
+    width: 90%;
+    margin: 10px 0;
+  }
+  main .container .description-progress {
+    padding: 30px 30px 50px;
+  }
+  main .container .icons {
+    width: 70%;
+  }
+  main .container .desc .popup {
+    top: 90px;
+    right: 50px;
+  }
+  main .container .desc .popup::before {
+    border: none;
+  }
+}
